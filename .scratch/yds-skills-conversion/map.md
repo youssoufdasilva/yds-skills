@@ -16,7 +16,8 @@ Convert this repository into the personal `yds-skills` distribution. Its primary
 ## Decisions so far
 
 - [Choose the first-release collection scope](./issues/done/01-choose-first-release-collection-scope.md): The first release ships only `unslop` and `technical-writing`; the Matt Pocock collection remains in Git history and upstream.
-- [Define repository identity](./issues/02-define-repository-identity.md): `yds-skills` starts at `0.1.0` as Youssouf Da Silva's MIT-licensed distribution, with its repository, package, plugin, and marketplace identities aligned.
+- [Define repository identity](./issues/done/02-define-repository-identity.md): `yds-skills` starts at `0.1.0` as Youssouf Da Silva's MIT-licensed distribution, with its repository, package, plugin, and marketplace identities aligned.
+- [Reconcile skill invocation policy](./issues/done/03-reconcile-skill-invocation-policy.md): Both promoted skills are model-invoked, with matching Claude Code and Codex policy and an explicit `technical-writing` dependency on `unslop`.
 
 ## Not yet specified
 
