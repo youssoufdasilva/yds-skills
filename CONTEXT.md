@@ -15,6 +15,15 @@ _Avoid_: ticket (use only when quoting external systems that call them tickets, 
 **Decision ticket**:
 A `wayfinder` unit: a child **Issue** of a `wayfinder:map` holding a *question* whose resolution is a decision, not a slice of a build to execute. The **decision** qualifier is what keeps it distinct from an implementation ticket; `wayfinder` introduces the term, then uses "ticket".
 
+**Promoted set**:
+The skills that a repository ships together as its primary installable group. Every supported installer exposes the same **Promoted set**.
+
+**Optional collection**:
+A separately installable group of skills outside the **Promoted set**.
+
+**Repository identity**:
+The public name and ownership metadata shared by a skill distribution's repository, package, supported installers, and license.
+
 **Triage role**:
 A canonical state-machine label applied to an **Issue** during triage (e.g. `needs-triage`, `ready-for-afk`). Each role maps to a real label string in the **Issue tracker** via `docs/agents/triage-labels.md`.
 
@@ -23,6 +32,9 @@ A canonical state-machine label applied to an **Issue** during triage (e.g. `nee
 - An **Issue tracker** holds many **Issues**
 - An **Issue** carries one **Triage role** at a time
 - A **Decision ticket** is an **Issue** (a child of a `wayfinder:map`)
+- A repository has one **Promoted set**
+- A repository can expose zero or more **Optional collections**
+- A repository has one **Repository identity** across its supported installers
 
 ## Flagged ambiguities
 
