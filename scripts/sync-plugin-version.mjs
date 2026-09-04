@@ -1,16 +1,17 @@
 #!/usr/bin/env node
-// Copies package.json's version into .claude-plugin/plugin.json.
-// Runs as part of `npm run version`, immediately after `changeset version`.
-// With --check it changes nothing and exits 1 if the two versions differ.
+
+// Copy package.json's version into .claude-plugin/plugin.json.
+// Pass --check to report a mismatch without changing either file.
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const repo = join(dirname(fileURLToPath(import.meta.url)), "..");
-const pluginPath = join(repo, ".claude-plugin", "plugin.json");
+const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
+const packagePath = join(repoRoot, "package.json");
+const pluginPath = join(repoRoot, ".claude-plugin", "plugin.json");
 
-const { version } = JSON.parse(readFileSync(join(repo, "package.json"), "utf8"));
+const { version } = JSON.parse(readFileSync(packagePath, "utf8"));
 const source = readFileSync(pluginPath, "utf8");
 const plugin = JSON.parse(source);
 
@@ -26,14 +27,13 @@ if (process.argv.includes("--check")) {
   process.exit(1);
 }
 
-// Rewrite only the version line, to keep the key order and the formatting.
 const updated = source.replace(
   /("version"\s*:\s*")[^"]*(")/,
   `$1${version}$2`,
 );
 
 if (JSON.parse(updated).version !== version) {
-  console.error(`Could not find a version field to replace in ${pluginPath}.`);
+  console.error(`Could not update the version field in ${pluginPath}.`);
   process.exit(1);
 }
 

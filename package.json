@@ -1,21 +1,31 @@
 {
-  "name": "mattpocock-skills",
-  "version": "1.2.3",
+  "name": "yds-skills",
+  "version": "0.1.0",
   "private": true,
-  "description": "Matt Pocock's agent skills for real engineering",
+  "description": "Agent skills for clear, direct technical writing",
+  "author": {
+    "name": "Youssouf Da Silva",
+    "url": "https://github.com/youssoufdasilva"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mattpocock/skills"
+    "url": "https://github.com/youssoufdasilva/yds-skills"
   },
+  "homepage": "https://github.com/youssoufdasilva/yds-skills",
   "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "unslop",
+    "technical-writing",
+    "documentation",
+    "claude-code",
+    "codex"
+  ],
   "scripts": {
-    "changeset": "changeset",
-    "version": "changeset version && node scripts/sync-plugin-version.mjs",
-    "check-plugin-version": "node scripts/sync-plugin-version.mjs --check"
-  },
-  "devDependencies": {
-    "@changesets/changelog-github": "^0.7.0",
-    "@changesets/cli": "^2.30.0"
+    "check-plugin-version": "node scripts/sync-plugin-version.mjs --check",
+    "check-repository": "node scripts/check-repository.mjs",
+    "validate": "node scripts/check-repository.mjs && claude plugin validate . --strict && npx skills@latest add . --list",
+    "version": "node scripts/sync-plugin-version.mjs"
   },
   "packageManager": "npm@10.9.4"
 }
