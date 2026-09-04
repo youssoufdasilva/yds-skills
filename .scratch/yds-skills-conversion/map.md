@@ -19,6 +19,7 @@ Convert this repository into the personal `yds-skills` distribution. Its primary
 - [Reconcile skill invocation policy](./issues/done/03-reconcile-skill-invocation-policy.md): Both promoted skills are model-invoked, with matching Claude Code and Codex policy and an explicit `technical-writing` dependency on `unslop`.
 - [Define retained repository infrastructure](./issues/done/04-define-retained-repository-infrastructure.md): Keep a flat two-skill distribution, self-hosted Claude marketplace, skills.sh route, lean maintenance tooling, dual MIT attribution, and the generic local agent configuration.
 - [Convert the repository](./issues/done/05-convert-the-repository.md): The working tree now contains the two-skill `yds-skills` distribution, its matching installers, and its lean maintenance tooling.
+- [Validate the distribution](./issues/done/06-validate-the-distribution.md): The promoted set passes its skill, repository, plugin, discovery, and isolated local installation checks.
 
 ## Not yet specified
 
